@@ -11,6 +11,14 @@ module OmniAuth
         :authorize_url => '/oauth/authorize',
         :token_url => '/oauth/token'
       }
+
+      option :authorize_options, [:api_key]
+      
+      def callback_phase
+        options[:client_options][:token_url] = "/oauth/token?api_key=#{options[:api_key]}"
+        super
+      end
+
     end
   end
 end
