@@ -2,6 +2,17 @@
 
 SurveyMonkey OAuth2 strategy for OmniAuth 1.0.
 
+# Usage
+
+In your config/initializers/omniauth.rb:
+
+    OmniAuth.config.logger = Rails.logger
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :surveymonkey, SURVEYMONKEY_API_USERNAME, SURVEYMONKEY_API_SECRET, api_key: SURVEYMONKEY_API_KEY
+    end
+
+Note that this differs from normal Omniauth configurations!
+
 #License
 
 Copyright (c) 2013 Kaushik SV
