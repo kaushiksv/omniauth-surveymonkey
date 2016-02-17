@@ -1,15 +1,15 @@
 require 'omniauth-surveymonkey'
 
 describe OmniAuth::Strategies::Surveymonkey do
-  
+
   subject do
-    OmniAuth::Strategies::Surveymonkey.new(nil, {}) 
+    OmniAuth::Strategies::Surveymonkey.new(nil, {})
   end
 
 	describe '#client' do
 
     it 'has correct surveymonkey api site' do
-      subject.options.client_options.site.should == ('https://api.surveymonkey.com')
+      subject.options.client_options.site.should == ('https://api.surveymonkey.net')
     end
 
     it 'has correct access token path' do
